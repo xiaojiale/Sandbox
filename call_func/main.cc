@@ -2,8 +2,9 @@
 
 int main(int argc, char* argv[])
 {
+  std::string huntPath;
   GetHuntPathImpl obj;
-  obj.printHuntPath();
-  std::cout << "Printe HuntPath successfully." << std::endl;
+  obj.printHuntPath(huntPath);
+  std::cout << "Print HuntPath successfully." << std::endl;
   return 0;
 }
