@@ -12,6 +12,7 @@ int main()
   ostringstream oss;
   oss << a << endl << b;
   str = oss.str();
+  cout << "begin" << endl;
   cout << str << endl;
   return 0;
 }

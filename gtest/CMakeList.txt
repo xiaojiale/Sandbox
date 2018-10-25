@@ -1,9 +1,0 @@
-cmake_minimum_required(VERSION 3.2)
-project(gtest_test)
-LINK_DIRECTORIES( /usr/local/lib )
-INCLUDE_DIRECTORIES(  /usr/local/include )
-add_executable(gtest_test Foomain.cpp)
-#下面这条语句中，链接了gmock、gtest以及pthread
-#pthread是必要的，因为前两者会用到
-TARGET_LINK_LIBRARIES(gtest_test gmock gtest pthread)
-install(TARGETS gtest_test RUNTIME DESTINATION bin)

@@ -1,8 +1,10 @@
+#pragma pack(8)
 #include <iostream>
 using namespace std;
 
 class CommonBase
 {
+  char a;
   int co;
 };
 
@@ -13,6 +15,8 @@ class Base1 : virtual public CommonBase
     virtual void print2(){}
   private:
     int b1;
+    char b3;
+    long b2;
 };
 
 class Base2 : virtual public CommonBase
@@ -35,9 +39,10 @@ class Derived : public Base1, public Base2
 
 int main()
 {
-  cout << sizeof(CommonBase) << endl;  // 4
-  cout << sizeof(Base1) << endl;       // 16
-  cout << sizeof(Base2) << endl;       // 16 1+1+1+8(没有继承时，存在多个虚函数也只需加上一个虚指针)
-  cout << sizeof(Derived) << endl;     // 24 16(C副本)+8(4+1,D本身)
+  cout << sizeof(CommonBase) << endl;  // 5   8(5)   4   
+  cout << sizeof(Base1) << endl;       // 25  32 8(5)+8(4+1)+8+8
+  cout << sizeof(Base2) << endl;       // 17  24 8(5)+8(4)+8
+  cout << sizeof(Derived) << endl;     // 41  8(5)+8(4+1)+8+8+8(4)+0(4)+8
+//  8(5)+4+8+4+8 52 32+24-8+4 40 16+16-4+4+8
   return 0;
 }

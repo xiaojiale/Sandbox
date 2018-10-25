@@ -6,7 +6,6 @@ enum days{one, two, three}day;
 enum time{first, second, third, forth, fifth};
 #endif
 enum rank{first, second, third};
-
 #if 0
 int main()
 {
